@@ -1,0 +1,19 @@
+syntax = "proto3";
+
+option java_multiple_files = true;
+option java_outer_classname = "HelloGrpcProto";
+
+package homo.efficio.springcamp2017.grpc.hello;
+
+message HelloRequest {
+    string clientName = 1;
+}
+
+message HelloResponse {
+    string welcomeMessage = 1;
+}
+
+service HelloSpringCamp {
+
+    rpc unaryHello(HelloRequest) returns (HelloResponse) {}
+}
