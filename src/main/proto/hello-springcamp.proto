@@ -18,4 +18,6 @@ service HelloSpringCamp {
     rpc unaryHello(HelloRequest) returns (HelloResponse) {}
 
     rpc serverStreamingHello(HelloRequest) returns (stream HelloResponse) {}
+
+    rpc clientStreamingHello(stream HelloRequest) returns (HelloResponse) {}
 }
