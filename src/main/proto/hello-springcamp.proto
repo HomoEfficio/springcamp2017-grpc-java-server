@@ -20,4 +20,6 @@ service HelloSpringCamp {
     rpc serverStreamingHello(HelloRequest) returns (stream HelloResponse) {}
 
     rpc clientStreamingHello(stream HelloRequest) returns (HelloResponse) {}
+
+    rpc biStreamingHello(stream HelloRequest) returns (stream HelloResponse) {}
 }
