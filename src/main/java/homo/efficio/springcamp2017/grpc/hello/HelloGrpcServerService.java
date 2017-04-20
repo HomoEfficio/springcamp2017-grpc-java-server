@@ -43,4 +43,28 @@ public class HelloGrpcServerService extends HelloSpringCampGrpc.HelloSpringCampI
         // 응답 완료
         responseObserver.onCompleted();
     }
+
+    @Override
+    public void serverStreamingHello(HelloRequest request, StreamObserver<HelloResponse> responseObserver) {
+        logger.info("Server Streaming 메시지 왔다: " + request.getClientName());
+
+        // 1초 동안 비즈니스 로직 처리 후에 응답한다고 가정
+        try { Thread.sleep(1000); } catch (InterruptedException e) { e.printStackTrace(); }
+
+        HelloResponse response =
+                HelloResponse.newBuilder()
+                        .setWelcomeMessage("Server Streaming Hello " + request.getClientName())
+                        .build();
+
+        // Server Streaming이면 responseObserver.onNext()를 두 번 이상 호출할 수 있다.
+        responseObserver.onNext(response);
+        responseObserver.onNext(response);
+        responseObserver.onNext(response);
+
+        // 응답 시작 후 1초 후에 응답 완료된다고 가정
+        try { Thread.sleep(1000); } catch (InterruptedException e) { e.printStackTrace(); }
+
+        // 응답 완료
+        responseObserver.onCompleted();
+    }
 }
