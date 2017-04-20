@@ -118,4 +118,37 @@ public class HelloGrpcServerService extends HelloSpringCampGrpc.HelloSpringCampI
         };
     }
 
+    @Override
+    public StreamObserver<HelloRequest> biStreamingHello(StreamObserver<HelloResponse> responseObserver) {
+        return new StreamObserver<HelloRequest>() {
+            StringBuilder sb = new StringBuilder();
+
+            @Override
+            public void onNext(HelloRequest request) {
+                logger.info("Bidirectional Streaming 메시지 왔다: " + request.getClientName());
+
+                sb.append("Bidirectional Streaming Hello " + request.getClientName())
+                  .append("\n============================\n");
+
+                // 1초 동안 비즈니스 로직 처리 후에 응답한다고 가정
+                try { Thread.sleep(1000); } catch (InterruptedException e) { e.printStackTrace(); }
+
+                responseObserver.onNext(HelloResponse.newBuilder().setWelcomeMessage(sb.toString()).build());
+                // BiDirectional Streaming 이므로 responseObserver.onNext()를 2회 이상 호출할 수 있음.
+//                responseObserver.onNext(HelloResponse.newBuilder().setWelcomeMessage(sb.toString()).build());
+            }
+
+            @Override
+            public void onError(Throwable t) {
+                logger.log(Level.SEVERE, "BiDirectional Streaming requestObserver.onError() 호출");
+            }
+
+            @Override
+            public void onCompleted() {
+                // 응답 시작 후 1초 후에 응답 완료된다고 가정
+                try { Thread.sleep(1000); } catch (InterruptedException e) { e.printStackTrace(); }
+                responseObserver.onCompleted();
+            }
+        };
+    }
 }
