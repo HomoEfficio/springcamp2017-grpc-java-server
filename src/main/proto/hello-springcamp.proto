@@ -16,4 +16,6 @@ message HelloResponse {
 service HelloSpringCamp {
 
     rpc unaryHello(HelloRequest) returns (HelloResponse) {}
+
+    rpc serverStreamingHello(HelloRequest) returns (stream HelloResponse) {}
 }
