@@ -16,16 +16,12 @@ public class HelloGrpcServerRunner {
         final int port = 54321;
         final BindableService helloService = new HelloGrpcServerService();
 
-        Server server = new HelloGrpcServer(port, helloService).getServer();
+        HelloGrpcServer server = new HelloGrpcServer(port, helloService);
 
-        server.awaitTermination();
+        server.start();
 
         Runtime.getRuntime().addShutdownHook(
-                new Thread(() -> {
-                    System.err.println("Hello gRPC 서버 종료...");
-                    server.shutdown();
-                    System.err.println("Hello gRPC 서버 종료 완료");
-                })
+                new Thread(() -> server.shutdown())
         );
     }
 }

@@ -6,11 +6,11 @@ option java_outer_classname = "HelloGrpcProto";
 package homo.efficio.springcamp2017.grpc.hello;
 
 message HelloRequest {
-    string clientName = 1;
+    string request = 1;
 }
 
 message HelloResponse {
-    string welcomeMessage = 1;
+    string response = 1;
 }
 
 service HelloSpringCamp {
