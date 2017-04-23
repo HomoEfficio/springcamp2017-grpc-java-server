@@ -16,10 +16,14 @@ Spring Camp 2017의 **gㅏ벼운 RPC, gRPC**의 예제 코드와 발표에 다 �
     - IntelliJ: Protobuf Support
     - Eclipse: https://marketplace.eclipse.org/category/free-tagging/grpc/title
 
+### 코드 보기
+
+- 최초 커밋부터 순서대로 체크아웃하면서 보면 gRPC 프로그램 작성 순서와 함께 더 쉽게 이해할 수 있음
+
 ### 실행
 
 - HelloGrpcServerRunner.java 파일의 메인 메서드로 gRPC 서버 실행
 
 ### 슬라이드
 
-- [Spring Camp 2017 - gㅏ벼운 RPC, gRPC](https://github.com/HomoEfficio/dev-tips/blob/master/SpringCamp2017%20-%20g%E3%85%8F%E1%84%87%E1%85%A7%E1%84%8B%E1%85%AE%E1%86%AB%20RPC%2C%20gRPC.pdf)
+- [Spring Camp 2017 - gㅏ벼운 RPC, gRPC (약 8M)](https://github.com/HomoEfficio/dev-tips/blob/master/SpringCamp2017%20-%20g%E3%85%8F%E1%84%87%E1%85%A7%E1%84%8B%E1%85%AE%E1%86%AB%20RPC%2C%20gRPC.pdf)
