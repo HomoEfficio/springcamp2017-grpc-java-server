@@ -27,3 +27,7 @@ Spring Camp 2017의 **gㅏ벼운 RPC, gRPC**의 예제 코드와 발표에 다 �
 ### 슬라이드
 
 - [Spring Camp 2017 - gㅏ벼운 RPC, gRPC (약 8M)](https://github.com/HomoEfficio/dev-tips/blob/master/SpringCamp2017%20-%20g%E3%85%8F%E1%84%87%E1%85%A7%E1%84%8B%E1%85%AE%E1%86%AB%20RPC%2C%20gRPC.pdf)
+
+### 영상
+
+- https://www.youtube.com/watch?v=sKWy7BJxIas
