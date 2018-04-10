@@ -30,4 +30,4 @@ Spring Camp 2017의 **gㅏ벼운 RPC, gRPC**의 예제 코드와 발표에 다 �
 
 ### 영상
 
-- https://www.youtube.com/watch?v=sKWy7BJxIas
+- [![스프링캠프 2017 [Day1 B5] _ gㅏ벼운 RPC, gRPC(빠르고 가벼운 Polyglot RPC framework) - YouTube](https://img.youtube.com/vi/sKWy7BJxIas/0.jpg)](https://www.youtube.com/watch?v=sKWy7BJxIas)
