@@ -3,3 +3,8 @@
 build/
 out/
 
+.settings/
+bin/
+gen-src/
+.classpath
+.project
